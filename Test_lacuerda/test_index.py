@@ -18,6 +18,7 @@ def test_title(browser_page):
     
     
 ############# HEADER ################ 
+
 def test_header(browser_page):
 
     browser_page.goto("https://www.lacuerda.net/")
@@ -46,7 +47,29 @@ def test_header(browser_page):
         browser_page.goto("https://www.lacuerda.net/")
         browser_page.wait_for_load_state("domcontentloaded")
 
-############# SEARCHING BAR ################ 
+############# SIGN IN ################
+
+def test_signin(browser_page): 
+    browser_page.locator("#mReg").click()
+    browser_page.locator("input[name='apodo']").fill("RandomUser")
+    browser_page.wait_for_timeout(5000)
+    browser_page.locator("#registro > div > div:nth-child(4) > input").fill("correo@test.com")
+    browser_page.wait_for_timeout(5000)
+    browser_page.locator("input[name='usr_clave']").fill("12345ABCd")
+    browser_page.wait_for_timeout(3000)
+    browser_page.locator("input[name='usr_clave2']").fill("12345ABCd")
+    browser_page.wait_for_timeout(3000)
+    browser_page.locator("input[name='acepto']").click()  
+    browser_page.wait_for_timeout(5000)
+    browser_page.locator(".btnmain").click()
+    browser_page.wait_for_timeout(5000)
+    browser_page.locator("text =¡Estás a un paso de completar tu inscripción!")
+    
+    # Volver al home
+    browser_page.goto("https://www.lacuerda.net/")
+    browser_page.wait_for_load_state("domcontentloaded")
+      
+############# SEARCHING BAR TESTING AND COUNT THE SONG################ 
 def test_searcher(browser_page):
     browser_page.locator("//*[@id='sExp']").click()
     browser_page.wait_for_timeout(5000)
@@ -58,4 +81,6 @@ def test_searcher(browser_page):
     browser_page.wait_for_timeout(5000) 
     browser_page.get_by_text("Buscar").click()      
     browser_page.wait_for_timeout(5000)     
+
 ### Run with: pytest --headed
+
