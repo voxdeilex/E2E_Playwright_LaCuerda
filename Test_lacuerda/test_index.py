@@ -8,6 +8,7 @@ import allure
 def test_title(browser_page):
     with allure.step("Navegar a lacuerda.net"):
         browser_page.goto("https://www.lacuerda.net/")
+        browser_page.wait_for_load_state("domcontentloaded")
 
     with allure.step("Validar que el logo sea visible"):
         logo = browser_page.locator("img[src*='lacuerda-big']")
