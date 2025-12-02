@@ -1,7 +1,4 @@
-+-------------------------------------------------------+
- E2E Automated Testing with Playwright, Python & Pytest
-+-------------------------------------------------------+
-
+## E2E Automated Testing with Playwright, Python & Pytest
 
 This repository contains an end-to-end (E2E) automated testing project using Playwright, Python, Pytest and Allure reports.  
 The goal of this project is to demonstrate a complete QA Automation test case implementation using Playwright and Python, following best practices for end-to-end testing, project organization, and reporting.
