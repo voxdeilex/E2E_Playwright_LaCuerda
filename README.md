@@ -1,6 +1,6 @@
 ## E2E Automated Testing with Playwright, Python & Pytest
 
-This repository contains an end-to-end (E2E) automated testing project using Playwright, Python, Pytest and Allure reports.  
+This repository contains an end-to-end (E2E) automated testing project using Playwright, Python, Pytest and Allure reports with multiple browsers.  
 The goal of this project is to demonstrate a complete QA Automation test case implementation using Playwright and Python, following best practices for end-to-end testing, project organization, and reporting.
 
 ---
@@ -25,6 +25,7 @@ pip install -r requirements.txt
 playwright install
 
 ---
+## Run!
 
 ### Run tests in default browser:
 
@@ -36,13 +37,13 @@ pytest -v --browser chromium --browser firefox --browser webkit
 
 ---
 
-#### Allure Reports ####
+#### Reports ####
 
-### Generate test results:
+### Generate Allure test results:
 
 pytest --alluredir=allure-results
 
-#### View report: ####
+#### View Allure Report: ####
 
 allure serve allure-results
 
@@ -51,10 +52,15 @@ allure serve allure-results
 #### Project Structure ####
 
 E2E_Playwright_LaCuerda/
+
 │── conftest.py
+
 │── Test_lacuerda/
+
 │ └── test_index.py
+
 │── requirements.txt
+
 │── README.md
 
 
